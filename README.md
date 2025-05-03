@@ -1,7 +1,7 @@
 # gender-age-prediction-from-audio
 A Deep learning model that predicts the gender and age using audio clips
 
-### Dataset
+## Dataset
 The dataset used in this project is derived from Mozilla Common Voice, which provides a large collection of speech data contributed by volunteers. The dataset has been preprocessed to ensure balanced representation of male and female genders for improved model performance. [Mozilla Common Voice](https://commonvoice.mozilla.org/en/)
 
 **Columns used**
@@ -10,7 +10,7 @@ The dataset used in this project is derived from Mozilla Common Voice, which pro
 - `age`: Mapped categorical values like “twenties” → 20, “thirties” → 30, etc.
 
 
-### Data Cleaning and Balancing
+## Data Cleaning and Balancing
 Dropped Columns: `up_votes`, `down_votes`, `accent`, `duration`, `text`.
 
 **Filtering:**
@@ -21,7 +21,7 @@ Dropped Columns: `up_votes`, `down_votes`, `accent`, `duration`, `text`.
 **Balancing:**
 - To avoid gender bias, the dataset is balanced by downsampling the overrepresented gender based on age distribution.
 
-### Data Preprocessing
+## Data Preprocessing
 
 **Sampling Parameters (Default Values)**
 - Sample Rate: `22050 Hz`
@@ -41,7 +41,7 @@ Dropped Columns: `up_votes`, `down_votes`, `accent`, `duration`, `text`.
 - Training data is shuffled and cached for performance
 - Test data uses center cropping instead of random cropping for consistency
 
-### Model Architecture
+## Model Architecture
 
 The model combines CNN and RNN architectures for effective audio feature extraction:
 
@@ -62,7 +62,7 @@ The model combines CNN and RNN architectures for effective audio feature extract
 - Gender output: Dense layer with **sigmoid** activation (binary classification)
 - Age output: Dense layer with **linear** activation (regression)
 
-### Model Training
+## Model Training
 
 The training approach uses a multi-task learning setup:
 
